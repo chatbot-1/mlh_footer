@@ -1,0 +1,227 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    color: white;
+    background-color: #251B37;
+    /* background-image: linear-gradient(315deg, #4c4177 0%, #2a5470 74%); */
+}
+
+/* progress section */
+
+.container{
+    /* background-color: #A84448; */
+    padding: 2rem;
+    padding-bottom: 400px;
+    margin: 0 auto;
+    max-width: 800px;
+}
+.top{
+    text-align: center;
+    padding: 4rem 0;
+    max-width: 600px;
+    margin: 0 auto;
+}
+.timeline{
+    position: relative;
+    min-height: 100px;
+}
+.line{
+    position: absolute;
+    z-index: 2;
+    left: calc(50% - 1px);
+    width: 3px;
+    top: -50px;
+    bottom: -50px;
+    background-color: #fff;
+    display: none;
+    z-index: -1;
+}
+.line::before,
+.line::after{
+    position: absolute;
+    display: block;
+    content: "";
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50%;
+    background-color: #fff;
+    left: 50%;
+    transform: translate(-50%);
+}
+.line::after{
+    bottom: 0;
+}
+.section{
+    display: flex;
+    opacity: 0;
+    transform: translate(-100%);
+    transition: 600ms ease;
+    position: relative;
+    z-index: 1;
+    margin: 50px 0;
+    padding: 1rem;
+    border-radius: 1rem;
+    align-items: center;
+    min-height: 300px;
+}
+.section:nth-child(odd) {
+    flex-direction: row-reverse;
+    transform: translate(1005);
+}
+.bead{
+    position: absolute;
+    display: block;
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50%;
+    background-color: #fff;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%);
+}
+.content{
+    width: calc(50% - 2rem);
+    border: 2px solid rgb(1, 1, 36);
+    border-radius: 8px;
+    padding: 20px;
+    transition: ease-in 0.2s;
+}
+.content:hover{
+    background: #312449;
+}
+.show-me:nth-child(n){
+    transform: none;
+    opacity: 1;
+}
+h1{
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+/* footer section */
+
+footer{
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    position: absolute;
+    bottom: auto;
+    background: linear-gradient(to right, #372948, #2d0b00);
+    color: #fff;
+    padding: 100px 0 30px;
+    border-top-left-radius: 125px;
+    font-size: 13px;
+    line-height: 20px;
+}
+.row{
+    width: 85%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.col{
+    flex-basis: 25%;
+    padding: 10px;
+}
+.col h3{
+    width: fit-content;
+    margin-bottom: 40px;
+    position: relative;
+}
+.logo{
+    width: 150px;
+}
+.col ul li{
+    list-style: none;
+    margin-bottom: 12px;
+}
+.col ul li a{
+    text-decoration: none;
+    color: white;
+    transition: ease-in .2s;
+}
+.col ul li a:hover{
+    color: rgb(199, 192, 192);
+}
+form{
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 50px;
+}
+form .fa-regular{
+    font-size: 18px;
+    margin-right: 10px;
+}
+form input{
+    width: 100%;
+    background: transparent;
+    color: #ccc;
+    border: 0;
+    outline: none;
+}
+form button{
+    background: transparent;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+}
+form button .fa-solid{
+    font-size: 16px;
+    color: #ccc;
+}
+.social .fa-brands{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #000;
+    background: #ccc;
+    margin-right: 15px;
+}
+hr{
+    width: 90%;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    margin: 20px auto;
+}
+.copyright{
+    text-align: center;
+}
+.underline{
+    width: 100%;
+    height: 3px;
+    background-color: #767676;
+    border-radius: 3px;
+    position: absolute;
+    top: 25px;
+    left: 0;
+    overflow: hidden;
+}
+.underline span{
+    width: 15px;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 3px;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    animation: moving 2s linear infinite;
+}
+@keyframes moving{
+    0%{
+        left: -20%;
+    }
+    100%{
+        left: 100%;
+    }
+}
